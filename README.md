@@ -1,1 +1,1 @@
-# weatherCheckerSpecflow
+# WeatherChecker.BDD
