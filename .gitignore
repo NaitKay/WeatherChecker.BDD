@@ -1,0 +1,6 @@
+# Visual Studio temp something
+.vs/
+TestResults/
+bin/
+obj/
+

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestProfile xmlns="http://www.specflow.org/schemas/plus/TestProfile/1.5">
+  <Settings projectName="Weather Checker Specflow" />
+  <Execution stopAfterFailures="0" testThreadCount="1" testSchedulingMode="Sequential" retryCount="0"/>
+  <TestAssemblyPaths>
+    <TestAssemblyPath>WeatherChecker.BDD.dll</TestAssemblyPath>
+  </TestAssemblyPaths>
+  <DeploymentTransformation>
+    <Steps>
+      <EnvironmentVariable variable="BROWSER" value="Chrome" />
+      <EnvironmentVariable variable="appUrl" value="https://serene-mountain-14043.herokuapp.com" />
+    </Steps>
+  </DeploymentTransformation>
+</TestProfile>
