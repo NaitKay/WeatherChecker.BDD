@@ -74,7 +74,7 @@ namespace WeatherChecker.BDD.PageObjects
             weatherTableProperties.AddRange(_driver.FindElements(By.XPath("//table//tr/td")));
             foreach(IWebElement weatherTableProperty in weatherTableProperties)
             {
-                if (weatherTableProperty.Text == null) return false;
+                if (weatherTableProperty.Text == "") return false;
             }
 
             return true;

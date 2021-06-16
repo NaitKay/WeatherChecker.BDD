@@ -9,6 +9,7 @@
     <Steps>
       <EnvironmentVariable variable="BROWSER" value="Chrome" />
       <EnvironmentVariable variable="appUrl" value="https://serene-mountain-14043.herokuapp.com" />
+	  <EnvironmentVariable variable="weatherAppAPI" value="https://fierce-gorge-81903.herokuapp.com/api" />
     </Steps>
   </DeploymentTransformation>
 </TestProfile>
