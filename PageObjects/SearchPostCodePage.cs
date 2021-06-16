@@ -10,6 +10,7 @@ namespace WeatherChecker.BDD.PageObjects
         private readonly IWebDriver _driver;
         private readonly string appUrl;
 
+
         
         public SearchPostCodePage(IWebDriver driver) : base(driver)
         {
@@ -21,9 +22,9 @@ namespace WeatherChecker.BDD.PageObjects
         private IWebElement searchButton => _driver.WaitUntilVisible(By.CssSelector("#searchLocation>button"));
         private IWebElement weatherDetailsTable => _driver.WaitUntilVisible(By.CssSelector("table>caption.tableHeader"));
         private IWebElement errorMessage => _driver.WaitUntilVisible(By.CssSelector("#root h1"));
-        private IWebElement weatherTime => _driver.WaitUntilVisible(By.XPath("//th[text()='Time:']/../td"));
-        private IWebElement weatherTemprature => _driver.WaitUntilVisible(By.XPath("//th[text()='Temperature:']/../td"));
-        private IWebElement weatherHumidity => _driver.WaitUntilVisible(By.XPath("//th[text()='Humidity:']/../td"));
+        public IWebElement weatherTime => _driver.WaitUntilVisible(By.XPath("//th[text()='Time:']/../td"));
+        public IWebElement weatherTemprature => _driver.WaitUntilVisible(By.XPath("//th[text()='Temperature:']/../td"));
+        public IWebElement weatherHumidity => _driver.WaitUntilVisible(By.XPath("//th[text()='Humidity:']/../td"));
         
         private List<IWebElement> weatherTableProperties = new List<IWebElement>();
         
@@ -84,5 +85,7 @@ namespace WeatherChecker.BDD.PageObjects
         {
             return errorMessage.Text;
         }
+
+       
     }
 }

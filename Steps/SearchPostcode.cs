@@ -3,6 +3,8 @@ using WeatherChecker.BDD.PageObjects;
 using TechTalk.SpecFlow;
 using System;
 using FluentAssertions;
+using RestSharp.Serialization.Json;
+using WeatherChecker.BDD.ApiHelper;
 
 namespace WeatherChecker.BDD.StepDefinitions
 {
@@ -12,6 +14,7 @@ namespace WeatherChecker.BDD.StepDefinitions
         private readonly SearchPostCodePage _page;
         readonly Random random = new();
 
+
         private readonly string[] validPostcode = { "W6 0NW", "W6 0NW", "W6 0NW", "W6 0NW", "W6 0NW"};
         private readonly string[] invalidPostcode = { "B99 9AA", "B99 9AB", "B99 9AB", "B99 9AB", "B99 9AB" };
         private readonly string[] nonExistingInvalidPostcode = { "INV LID", "TE ST", "TE ST", "TE ST", "TE ST" };
@@ -20,13 +23,14 @@ namespace WeatherChecker.BDD.StepDefinitions
         private readonly string postCodeNotFoundMessage = "Unable to find the postcode.";
         private readonly string postCodeNotValidMessage = "Invalid postcode.";
 
+        private WeatherAppApi weatherAppApi;
 
         public SearchPostcode(IWebDriver driver)
         {
             _page = new SearchPostCodePage(driver);
         }
 
-        [Given(@"User open Weather Checker application")]
+        [When(@"User open Weather Checker application")]
         public void GivenUserOpenWeatherCheckerApplication()
         {
             _page.OpenApplication();
@@ -87,5 +91,12 @@ namespace WeatherChecker.BDD.StepDefinitions
             _page.CheckErrorMessage().Should().Equals(postCodeNotValidMessage);
         }
 
+        [Then(@"Weather details should match with the Weather App API response")]
+        public void ThenWeatherDetailsShouldMatchWithTheWeatherAppAPIResponse()
+        {
+            WeatherAppResponse weatherAppResponse = new JsonDeserializer().Deserialize<WeatherAppResponse>(WeatherAppApi.actualResponse);
+            weatherAppResponse.currently.temperature.Should().Equals(_page.weatherTemprature);
+            weatherAppResponse.currently.humidity.Should().Equals(_page.weatherHumidity);
+        }
     }
 }

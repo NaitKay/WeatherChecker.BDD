@@ -16,7 +16,7 @@ namespace WeatherChecker.BDD.StepDefinitions
         private readonly string validPostcodeRequest = @"{""address"": ""W6 0NW""}";
         private readonly string nonExistingValidPostcodeRequest = @"{""address"": ""B99 9AA""}";
         private readonly string invalidPostcodeRequest = @"{""address"": ""EC1A 1BB""}";
-        private IRestResponse actualResponse;
+        public static IRestResponse actualResponse;
 
         private readonly string addressNotFoundError = "Problem with Geocode API: Unable to find that address.";
         private readonly string invalidAddressError = "Invalid Address";
@@ -46,9 +46,8 @@ namespace WeatherChecker.BDD.StepDefinitions
         [When(@"Weather App API is called with postcode (.*)")]
         public void WhenWeatherAppAPIIsCalledWithPostcode(string postcode)
         {
-            string request = @"{""address"": ""+ postcode +""}";
-            apiCaller.CallPOST(request);
-
+            string request = "{\"address\": \"" + postcode +"\"}";
+            actualResponse = apiCaller.CallPOST(request);
         }
 
         [When(@"Weather App API is called with non-existing valid postcode")]
@@ -85,6 +84,9 @@ namespace WeatherChecker.BDD.StepDefinitions
         {
             actualResponse.StatusCode.Should().Be(status);
         }
+
+        
+
 
 
 
