@@ -22,10 +22,10 @@ Feature: Check weather by postcode
   @checkWeather @uiTests
   Scenario: Search valid non-existing postcode
     When User search valid non-existing postcode
-    Then App should inform the user that it is unanble find the postcode
+    Then App should inform the user that postcode not found
     
   @checkWeather @uiTests
   Scenario: Search invalid postcode
     When User search invalid postcode
-    Then App should inform the user that postcode is invalid
+    Then App should inform the user that postcode not valid
 

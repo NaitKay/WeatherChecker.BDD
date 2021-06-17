@@ -248,7 +248,7 @@ namespace WeatherChecker.BDD.Features
     testRunner.When("User search valid non-existing postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
-    testRunner.Then("App should inform the user that it is unanble find the postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("App should inform the user that postcode not found", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -291,7 +291,7 @@ namespace WeatherChecker.BDD.Features
     testRunner.When("User search invalid postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
-    testRunner.Then("App should inform the user that postcode is invalid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("App should inform the user that postcode not valid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

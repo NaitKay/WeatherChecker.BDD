@@ -20,10 +20,13 @@ namespace WeatherChecker.BDD.StepDefinitions
         private readonly string[] nonExistingInvalidPostcode = { "INV LID", "TE ST", "TE ST", "TE ST", "TE ST" };
 
 
+        /**
         private readonly string postCodeNotFoundMessage = "Unable to find the postcode.";
         private readonly string postCodeNotValidMessage = "Invalid postcode.";
+        **/
 
-        private WeatherAppApi weatherAppApi;
+        private readonly string postCodeNotFoundMessage = "Postcode not found!";
+        private readonly string postCodeNotValidMessage = "Postcode not valid.";
 
         public SearchPostcode(IWebDriver driver)
         {
@@ -79,13 +82,13 @@ namespace WeatherChecker.BDD.StepDefinitions
             _page.CheckAllWeatherPropeties().Should().BeTrue();
         }
 
-        [Then(@"App should inform the user that it is unanble find the postcode")]
+        [Then(@"App should inform the user that postcode not found")]
         public void ThenAppShouldInformTheUserThatItIsUnanbleFindThePostcode()
         {
             _page.CheckErrorMessage().Should().Equals(postCodeNotFoundMessage);
         }
 
-        [Then(@"App should inform the user that postcode is invalid")]
+        [Then(@"App should inform the user that postcode not valid")]
         public void ThenAppShouldInformTheUserThatPostcodeIsInvalid()
         {
             _page.CheckErrorMessage().Should().Equals(postCodeNotValidMessage);
