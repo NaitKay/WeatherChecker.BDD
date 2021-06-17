@@ -19,7 +19,7 @@ Feature: Weather APP API
     Examples: 
     | postcode | status |
     | W6 0NW   | 200    |
-    | B99 9AA  | 435    |
+    | B99 9AA  | 433    |
     | EC1A 1BB | 435    |
  
 

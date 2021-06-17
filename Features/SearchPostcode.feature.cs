@@ -75,7 +75,7 @@ namespace WeatherChecker.BDD.Features
 #line 3
   #line hidden
 #line 4
-    testRunner.Given("User open Weather Checker application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.When("User open Weather Checker application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
         }
         

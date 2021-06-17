@@ -1,7 +1,7 @@
 Feature: Check weather by postcode
 
   Background:
-    Given User open Weather Checker application
+    When User open Weather Checker application
 
   Scenario: Search valid existing postcode, check time format
     When User search valid existing postcode
