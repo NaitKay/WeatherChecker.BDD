@@ -1,4 +1,5 @@
-*Solution - What is it?*
+**Solution - What is it?**
+
 * The solution provides intellegent automation framework to test UI and API scenarios.
 * It provides a single platform to run UI Tests, API Tests and Integration tests which verifies UI behaviour against API responses.
 * Test scenarios are written using gherkin language which supports BDD/TDD.
@@ -7,11 +8,12 @@
 * Azure Devops is the preferred tool to run test suites in pipeline as dedicated or dev-integrated pipeline. However, this can also be easily implemented in tools like Jenkins and TeamCity
 
 
-* How tests are coded?*
+**How tests are coded?**
+
 * Features - 3 features are written inside feature folder.
-1) SearchPostcode :  this covers UI test scenarios.
-2) WeatherAppAPI : this covers API test scenarios.
-3) WeatherAppIntegration : this covers integration test scenarios, in which - first we call API and then check the API response parameters against the weather details displayed on UI.
+   1) SearchPostcode :  this covers UI test scenarios.
+   2) WeatherAppAPI : this covers API test scenarios.
+   3) WeatherAppIntegration : this covers integration test scenarios, in which - first we call API and then check the API response parameters against the weather      details displayed on UI.
 * Steps : this folder stores the classes which defines the steps in the feature files.
 * PagesObjects: the framework implements page object model, and all page classes are stored in this folder.
 * APIHelper: all API related classes are stored in this folder.
@@ -20,7 +22,8 @@
 * TestResults: all html test results are saved in this folder.
 
  
-*Instruction - how to execute tests*
+**Instruction - how to execute tests**
+
 * Tool required: you only need to install visual studio 2019, you can find the latest version for Mac [here ](https://visualstudio.microsoft.com/vs/mac/) . Then install ‘Specflow for visual studio 2019’ extension. 
 * Clone the git repo from [here](https://github.com/NaitKay/WeatherChecker.BDD)
 * Open WeatherCheck.BDD.sln file in VS2019 as a new solution.
