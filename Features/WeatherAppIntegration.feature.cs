@@ -70,13 +70,15 @@ namespace WeatherChecker.BDD.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Match weather details against weather app api response", SourceLine=2)]
+        [TechTalk.SpecRun.ScenarioAttribute("Match weather details against weather app api response", new string[] {
+                "weatherAppIntegrationTest"}, SourceLine=3)]
         public virtual void MatchWeatherDetailsAgainstWeatherAppApiResponse()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "weatherAppIntegrationTest"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Match weather details against weather app api response", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 3
+#line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -96,19 +98,19 @@ namespace WeatherChecker.BDD.Features
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 5
     testRunner.When("Weather App API is called with valid postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 5
+#line 6
     testRunner.And("User open Weather Checker application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 6
+#line 7
     testRunner.When("User search valid existing postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 7
+#line 8
     testRunner.Then("Weather details should be presented to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 8
+#line 9
     testRunner.And("Weather details should match with the Weather App API response", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

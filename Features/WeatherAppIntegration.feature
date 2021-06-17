@@ -1,5 +1,6 @@
 Feature: Weather app integration
-    
+  
+  @weatherAppIntegrationTest
   Scenario: Match weather details against weather app api response
     When Weather App API is called with valid postcode
     And User open Weather Checker application

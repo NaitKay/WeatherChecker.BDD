@@ -79,13 +79,17 @@ namespace WeatherChecker.BDD.Features
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Search valid existing postcode, check time format", SourceLine=5)]
+        [TechTalk.SpecRun.ScenarioAttribute("Search valid existing postcode, check time format", new string[] {
+                "checkWeather",
+                "uiTests"}, SourceLine=6)]
         public virtual void SearchValidExistingPostcodeCheckTimeFormat()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "checkWeather",
+                    "uiTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search valid existing postcode, check time format", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+#line 7
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -108,26 +112,30 @@ namespace WeatherChecker.BDD.Features
 #line 3
   this.FeatureBackground();
 #line hidden
-#line 7
+#line 8
     testRunner.When("User search valid existing postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 9
     testRunner.Then("Weather details should be presented to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 10
     testRunner.And("Weather details should display Time in correct format", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Search valid existing postcode - check temperature and humidity", SourceLine=10)]
+        [TechTalk.SpecRun.ScenarioAttribute("Search valid existing postcode - check temperature and humidity", new string[] {
+                "checkWeather",
+                "uiTests"}, SourceLine=12)]
         public virtual void SearchValidExistingPostcode_CheckTemperatureAndHumidity()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "checkWeather",
+                    "uiTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search valid existing postcode - check temperature and humidity", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+#line 13
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -150,23 +158,27 @@ namespace WeatherChecker.BDD.Features
 #line 3
   this.FeatureBackground();
 #line hidden
-#line 12
+#line 14
     testRunner.When("User search valid existing postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 15
     testRunner.Then("Weather details should display Temperature and Humidity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Weather properties without value", SourceLine=14)]
+        [TechTalk.SpecRun.ScenarioAttribute("Weather properties without value", new string[] {
+                "checkWeather",
+                "uiTests"}, SourceLine=17)]
         public virtual void WeatherPropertiesWithoutValue()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "checkWeather",
+                    "uiTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Weather properties without value", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+#line 18
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -189,61 +201,26 @@ namespace WeatherChecker.BDD.Features
 #line 3
   this.FeatureBackground();
 #line hidden
-#line 16
+#line 19
     testRunner.When("User search valid existing postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 20
     testRunner.Then("Weather details should not display properties without value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Search valid non-existing postcode", SourceLine=18)]
+        [TechTalk.SpecRun.ScenarioAttribute("Search valid non-existing postcode", new string[] {
+                "checkWeather",
+                "uiTests"}, SourceLine=22)]
         public virtual void SearchValidNon_ExistingPostcode()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "checkWeather",
+                    "uiTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search valid non-existing postcode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 19
-  this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 3
-  this.FeatureBackground();
-#line hidden
-#line 20
-    testRunner.When("User search valid non-existing postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 21
-    testRunner.Then("App should inform the user that it is unanble find the postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Search invalid postcode", SourceLine=22)]
-        public virtual void SearchInvalidPostcode()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search invalid postcode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 23
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -268,9 +245,52 @@ namespace WeatherChecker.BDD.Features
   this.FeatureBackground();
 #line hidden
 #line 24
-    testRunner.When("User search invalid postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("User search valid non-existing postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
+    testRunner.Then("App should inform the user that it is unanble find the postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Search invalid postcode", new string[] {
+                "checkWeather",
+                "uiTests"}, SourceLine=27)]
+        public virtual void SearchInvalidPostcode()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "checkWeather",
+                    "uiTests"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search invalid postcode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 28
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 3
+  this.FeatureBackground();
+#line hidden
+#line 29
+    testRunner.When("User search invalid postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 30
     testRunner.Then("App should inform the user that postcode is invalid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

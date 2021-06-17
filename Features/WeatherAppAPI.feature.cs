@@ -70,13 +70,17 @@ namespace WeatherChecker.BDD.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Call with valid existing postcode", SourceLine=2)]
+        [TechTalk.SpecRun.ScenarioAttribute("Call with valid existing postcode", new string[] {
+                "weatherAppApi",
+                "apiTests"}, SourceLine=3)]
         public virtual void CallWithValidExistingPostcode()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "weatherAppApi",
+                    "apiTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call with valid existing postcode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 3
+#line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -96,23 +100,27 @@ namespace WeatherChecker.BDD.Features
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 5
     testRunner.When("Weather App API is called with valid postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 5
+#line 6
     testRunner.Then("200 response returned with Time, Temperature and humidity", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Call with valid non-existing postcode", SourceLine=6)]
+        [TechTalk.SpecRun.ScenarioAttribute("Call with valid non-existing postcode", new string[] {
+                "weatherAppApi",
+                "apiTests"}, SourceLine=8)]
         public virtual void CallWithValidNon_ExistingPostcode()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "weatherAppApi",
+                    "apiTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call with valid non-existing postcode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
+#line 9
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -132,23 +140,27 @@ namespace WeatherChecker.BDD.Features
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 10
     testRunner.When("Weather App API is called with non-existing valid postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 11
     testRunner.Then("address not found error returned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Call with invalid non-existing postcode", SourceLine=10)]
+        [TechTalk.SpecRun.ScenarioAttribute("Call with invalid non-existing postcode", new string[] {
+                "weatherAppApi",
+                "apiTests"}, SourceLine=13)]
         public virtual void CallWithInvalidNon_ExistingPostcode()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "weatherAppApi",
+                    "apiTests"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call with invalid non-existing postcode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 11
+#line 14
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -168,10 +180,10 @@ namespace WeatherChecker.BDD.Features
             else
             {
                 this.ScenarioStart();
-#line 12
+#line 15
     testRunner.When("Weather App API is called with invalid postcode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 16
     testRunner.Then("invalid address error returned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -180,12 +192,19 @@ namespace WeatherChecker.BDD.Features
         
         public virtual void CallWithAnyPostcode(string postcode, string status, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "weatherAppApi",
+                    "apiTests"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("postcode", postcode);
             argumentsOfScenario.Add("status", status);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Call with any postcode", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+#line 19
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -205,36 +224,42 @@ namespace WeatherChecker.BDD.Features
             else
             {
                 this.ScenarioStart();
-#line 16
+#line 20
     testRunner.When(string.Format("Weather App API is called with postcode {0}", postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 21
     testRunner.Then(string.Format("{0} response should returned", status), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Call with any postcode, W6 0NW", SourceLine=20)]
+        [TechTalk.SpecRun.ScenarioAttribute("Call with any postcode, W6 0NW", new string[] {
+                "weatherAppApi",
+                "apiTests"}, SourceLine=24)]
         public virtual void CallWithAnyPostcode_W60NW()
         {
-#line 15
+#line 19
   this.CallWithAnyPostcode("W6 0NW", "200", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Call with any postcode, B99 9AA", SourceLine=20)]
+        [TechTalk.SpecRun.ScenarioAttribute("Call with any postcode, B99 9AA", new string[] {
+                "weatherAppApi",
+                "apiTests"}, SourceLine=24)]
         public virtual void CallWithAnyPostcode_B999AA()
         {
-#line 15
-  this.CallWithAnyPostcode("B99 9AA", "435", ((string[])(null)));
+#line 19
+  this.CallWithAnyPostcode("B99 9AA", "433", ((string[])(null)));
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Call with any postcode, EC1A 1BB", SourceLine=20)]
+        [TechTalk.SpecRun.ScenarioAttribute("Call with any postcode, EC1A 1BB", new string[] {
+                "weatherAppApi",
+                "apiTests"}, SourceLine=24)]
         public virtual void CallWithAnyPostcode_EC1A1BB()
         {
-#line 15
+#line 19
   this.CallWithAnyPostcode("EC1A 1BB", "435", ((string[])(null)));
 #line hidden
         }
